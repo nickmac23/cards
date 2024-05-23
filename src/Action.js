@@ -2,12 +2,12 @@ import ResIcon from './ResIcon'
 import Cost from './Cost'
 
 
-function Action({ order: { trigger, march, attack, shield, action, casualty, description } }) {
+function Action({ order: { trigger, march, attack, shield, action, gather, casualty, description } }) {
   return (
     <div className="action">
       <div className="action-trigger">
         {trigger && (
-            <><Cost cost={trigger} /> &nbsp; :</>
+            <Cost cost={trigger} />
           )
         }
       </div>
@@ -17,6 +17,7 @@ function Action({ order: { trigger, march, attack, shield, action, casualty, des
         <ResIcon amount={shield} id="d" />
         <ResIcon amount={action} id="ac" />
         <ResIcon amount={casualty} id="c" />
+        <ResIcon amount={gather} id="ga" />
       </div>
       <div>{description}</div>
     </div>

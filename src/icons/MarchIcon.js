@@ -1,6 +1,5 @@
 function MarchIcon() {
   return (
-    <div className='cost-icon'>
     <svg viewBox="0 0 24 24" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
       <g id="SVGRepo_iconCarrier">
         <rect className="cls-1" x="2.45" y="18.68" width="19.09" height="3.82"></rect>
@@ -14,7 +13,7 @@ function MarchIcon() {
         <line className="cls-1" x1="11.09" y1="11.05" x2="15.82" y2="11.05"></line>
         <path className="cls-1" d="M16.77,18.68a4.78,4.78,0,0,1,4.78-4.77"></path>
       </g>
-    </svg>    </div>
+    </svg>
   );
 }
 

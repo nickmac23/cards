@@ -5,7 +5,7 @@ div {
 .cards {
   width: 8.5in;
   height: 11in;
-  border:solid black 1px;
+  border:solid black 1.5px;
   font-size: 8px;
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +29,8 @@ div {
   align-items: center;
   justify-content: space-between;
   padding: 0 .125in;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .card-main {
@@ -36,21 +38,28 @@ div {
 }
 
 .card-pic {
-  border: solid black 1px;
+  border: solid black 1.5px;
+  border-bottom: none;
   height: .875in;
   margin-top: .125in;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
-.card-version {
-  position: absolute;
-  right: .0675in;
-  bottom: .0675in;
+.card-type {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid black 1.5px;
+  border-radius: 4px;
+  padding: .03in .06in;
+
 }
 
 .action {
   margin-top: .125in;
-  border: solid black 1px;
+  border: solid black 1.5px;
+  border-radius: 3px;
   padding: .06in;
   display: flex;
   align-items: center;
@@ -75,7 +84,24 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
+  font-size: 8px;
+  font-weight: normal;
+  position: relative;
+}
+.test {
+  border-radius: 100%;
+  border: solid black .5px;
+  background: white;
+  position: absolute;
+  width: .06in;
+  height: .06in;
+  top: -0.03in;
+  right: -0.03in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4px;
 }
 
 .cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;strokeWidth:1.91px;}

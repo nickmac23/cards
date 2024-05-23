@@ -8,6 +8,7 @@ import GameIcon from './icons/GameIcon'
 import StoneIcon from './icons/StoneIcon'
 import LumberIcon from './icons/LumberIcon'
 import CasualtyIcon from './icons/CasualtyIcon'
+import GatherIcon from './icons/GatherIcon'
 
 
 const IconMap = ({id}) => {
@@ -22,16 +23,33 @@ const IconMap = ({id}) => {
   if(id === "d") return <ShieldIcon />
   if(id === "at") return <AttackIcon />
   if(id === "c") return <CasualtyIcon />
+  if(id === "ga") return <GatherIcon />
 }
 
 function ResIcon({amount = 0, id}) {
   if (amount === 0) {
     return null
   }
-  if (id) {
-    return [...Array(amount)].map((k, i) => <IconMap id={id} key={`${id}_${i}`} />)
+  if (amount === "x") {
+    return (
+      <div className='cost-icon'>
+        <IconMap id={id} />
+        <div className='test'>X</div>
+      </div>
+    )
   }
-  return <div className="cost-icon">{amount}</div>
+  if (id) {
+    return [...Array(amount)].map((k, i) =>(
+      <div className='cost-icon'>
+        <IconMap id={id} key={`${id}_${i}`} />
+      </div>
+    ))
+  }
+  return (
+    <div className='cost-icon'>
+      <div className="cost-icon">{amount}</div>
+    </div>
+  )
 }
 
 

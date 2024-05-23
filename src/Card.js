@@ -3,7 +3,7 @@ import Cost from './Cost'
 import ResIcon from './ResIcon'
 
 
-function Card({ info: { title, cost, order, secondary, version } }) {
+function Card({ info: { title, type, cost, order, secondary, version } }) {
 
   return (
     <div className="card">
@@ -15,6 +15,10 @@ function Card({ info: { title, cost, order, secondary, version } }) {
       </div>
       <div className="card-main">
         <div className="card-pic" />
+        <div className='card-type'>
+          <span>{type}</span>
+          <span>{version}</span>
+        </div>
         <Action order={order} />
         {
           secondary && (
@@ -22,7 +26,6 @@ function Card({ info: { title, cost, order, secondary, version } }) {
           )
         }
       </div>
-      <div className='card-version'>{version}</div>
     </div>
   );
 }
