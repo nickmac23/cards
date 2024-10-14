@@ -1,6 +1,6 @@
 // command - your turn
-// reaction - can only be played when you are engaged in combat
-// instant - played at any time
+// combat - can only be played when you are engaged in combat
+// rapid - played at any time
 
 
 const config = [
@@ -11,6 +11,17 @@ const config = [
     'cost': {},
     'order': {
       'march': 1,
+    },
+  },
+  {
+    'amount': 1,
+    'title': 'Forced March',
+    'type': 'command',
+    'cost': {},
+    'order': {
+      'march': 1,
+      'action': 1,
+      'description': 'Gain -2 Attack Power'
     },
   },
   {
@@ -35,7 +46,7 @@ const config = [
   {
     'amount': 1,
     'title': 'Rally',
-    'type': 'instant',
+    'type': 'rapid',
     'cost': {},
     'order': {
       'action': 1,
@@ -53,7 +64,7 @@ const config = [
   {
     'amount': 1,
     'title': 'Defend',
-    'type': 'reaction',
+    'type': 'combat',
     'cost': {
     },
     'order': {
@@ -89,7 +100,7 @@ const config = [
   {
     'amount': 1,
     'title': 'Fortify',
-    'type': 'reaction',
+    'type': 'combat',
     'cost': {
       'lumber': 1
     },
@@ -107,13 +118,13 @@ const config = [
   {
     'amount': 1,
     'title': 'Intercept Order',
-    'type': 'instant',
+    'type': 'rapid',
     'cost': {
       'game': 1,
       'wheat': 1
     },
     'order': {
-      'description': 'counter target instant or reaction'
+      'description': 'counter target rapid or combat'
     },
   },
   {
@@ -125,6 +136,7 @@ const config = [
       'wheat': 1
     },
     'order': {
+      "march": 1,
       'description': "View target's hand and choose one card to discard"
     },
     'secondary': {
@@ -137,7 +149,7 @@ const config = [
   {
     'amount': 1,
     'title': 'Flank',
-    'type': 'reaction',
+    'type': 'combat',
     'cost': {
       'game': 1,
       'wheat': 1
@@ -162,7 +174,7 @@ const config = [
   {
     'amount': 1,
     'title': 'Tacticle Retreat',
-    'type': 'reaction',
+    'type': 'combat',
     'cost': {
       'game': 1,
       'wheat': 1
@@ -174,7 +186,7 @@ const config = [
   {
     'amount': 1,
     'title': 'War Cry',
-    'type': 'reaction',
+    'type': 'combat',
     'cost': {
       'game': 1,
       'wheat': 1
@@ -196,6 +208,37 @@ const config = [
       'casualty': 1,
       'march': 1,
       'description': "Casualty can only be applied when using a ranged only attack."
+    },
+  },
+  {
+    'amount': 1,
+    'title': 'Watch Tower',
+    'type': 'combat',
+    'cost': {
+      'game': 1,
+      'wheat': 1
+    },
+    'order': {
+      'description': "First strike",
+    },
+    'secondary': {
+      'trigger': {
+        "ore": 1,
+      },
+      "attack": 2,
+    }
+  },
+  {
+    'amount': 1,
+    'title': 'Reposition',
+    'type': 'rapid',
+    'cost': {
+      'game': 1,
+      'wheat': 1
+    },
+    'order': {
+      'march': 1,
+      'description': 'no attacky'
     },
   },
 ]
