@@ -1,5 +1,5 @@
 import './App.css';
-import config from './cardsConfig'
+import config from './newDirectionConfig'
 import Card from './Card'
 import { v4 as uuidv4 } from 'uuid';
 
