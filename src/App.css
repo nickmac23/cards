@@ -114,3 +114,24 @@ div {
   height: 100%;
   align-items: center;
 }
+
+.income_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+}
+
+.income {
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+}

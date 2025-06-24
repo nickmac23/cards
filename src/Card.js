@@ -1,9 +1,9 @@
 import Action from './Action'
 import Cost from './Cost'
-import ResIcon from './ResIcon'
+import Income from './Income'
 
 
-function Card({ info: { title, type, cost, order, secondary, version } }) {
+function Card({ info: { title, type, cost, order, secondary, version, income } }) {
 
   return (
     <div className="card">
@@ -26,6 +26,7 @@ function Card({ info: { title, type, cost, order, secondary, version } }) {
           )
         }
       </div>
+      <Income income={income}/>
     </div>
   );
 }

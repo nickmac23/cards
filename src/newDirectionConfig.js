@@ -2,7 +2,7 @@
 //     1. gold (wheat)
 //         - income
 //         - army
-//         - harvest
+//         - provision
 //     2. wood
 //         - mobility
 //         - ranged attacks
@@ -11,20 +11,21 @@
 //     4. iron (ore)
 //         - attack
 
-const harvestCards = [
+const provisionCards = [
   {
-    'amount': 1,
+    'amount': 4,
     'title': 'Forage the Land',
-    'type': 'harvest',
+    'type': 'provision',
     'cost': {},
     'order': {
       'gather': 1,
     },
+    "income": 1
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Stockpile Reserves',
-    'type': 'harvest',
+    'type': 'provision',
     'cost': {},
     'order': {
       'gather': 1,
@@ -37,9 +38,9 @@ const harvestCards = [
     }
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Fortify Position',
-    'type': 'harvest',
+    'type': 'provision',
     'cost': {},
     'order': {
       'gather': 1,
@@ -52,9 +53,9 @@ const harvestCards = [
     }
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Ready arms',
-    'type': 'harvest',
+    'type': 'provision',
     'cost': {},
     'order': {
       'gather': 1,
@@ -64,12 +65,13 @@ const harvestCards = [
         "ore": 1,
       },
       'attack': 1
-    }
+    },
+    'income': 1
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Enlist',
-    'type': 'harvest',
+    'type': 'provision',
     'cost': {},
     'order': {
       'gather': 1,
@@ -83,11 +85,20 @@ const harvestCards = [
   },
 ]
 
-const attackCards = [
+const commandCards = [
   {
-    'amount': 1,
+    'amount': 4,
+    'title': 'Attack',
+    'type': 'command',
+    'cost': {},
+    'order': {
+      'attack': 1,
+    },
+  },
+  {
+    'amount': 2,
     'title': 'Sheild Wall',
-    'type': 'attack',
+    'type': 'command',
     'cost': {},
     'order': {
       'attack': 1,
@@ -100,9 +111,9 @@ const attackCards = [
     }
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Raid',
-    'type': 'attack',
+    'type': 'command',
     'cost': {},
     'order': {
       'attack': 1,
@@ -111,13 +122,13 @@ const attackCards = [
       'trigger': {
         "wheat": 1,
       },
-      'description': 'Steal any resource from a player who has units in an adjecent hex. Must be resolved pre combat.'
+      'description': 'Steal an opponents resource. Must be resolved pre combat. (distance 1)'
     }
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Charge!',
-    'type': 'attack',
+    'type': 'command',
     'cost': {},
     'order': {
       'attack': 1,
@@ -130,9 +141,9 @@ const attackCards = [
     }
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Loose!',
-    'type': 'attack',
+    'type': 'command',
     'cost': {},
     'order': {
       'attack': 1,
@@ -142,24 +153,25 @@ const attackCards = [
         "lumber": 1,
       },
       'description': 'range attack from +1 distance'
-    }
+    },
+    'income': 1
   },
 ]
 
-const bonusCards = [
+const tacticCards = [
   {
-    'amount': 1,
+    'amount': 4,
     'title': 'Reposistion',
-    'type': 'bonus',
+    'type': 'tactic',
     'cost': {},
     'order': {
       'description': 'Move units from adjecent hexes to target hex',
     },
   },
   {
-    'amount': 1,
+    'amount': 4,
     'title': 'Loose!',
-    'type': 'bonus',
+    'type': 'tactic',
     'cost': {},
     'order': {
       'attack': 1,
@@ -167,15 +179,50 @@ const bonusCards = [
     },
   },
   {
-    'amount': 1,
+    'amount': 2,
     'title': 'Bolster Army',
-    'type': 'bonus',
+    'type': 'tactic',
     'cost': {},
     'order': {
       'description': 'Deploy a unit for free'
     },
   },
+  {
+    'amount': 2,
+    'title': 'Sabotage',
+    'type': 'stratagem',
+    'cost': {},
+    'order': {
+      'description': 'Look through you opponents hand. (distance 1)'
+    },
+    'secondary': {
+      'trigger': {
+        "lumber": 1,
+      },
+      'description': 'discard 1 of your opponents card.'
+    }
+  },
+  {
+    'amount': 2,
+    'title': 'Scout',
+    'type': 'stratagem',
+    'cost': {},
+    'order': {
+      'description': 'Gain +1 defence'
+    },
+    'income': 2
+  },
+  {
+    'amount': 2,
+    'title': 'Tatical retreat',
+    'type': 'stratagem',
+    'cost': {},
+    'order': {
+      'description': 'Retreat units, resolves precombat.'
+    },
+    'income': 2
+  },
 ]
 
 
-export default [...harvestCards, ...attackCards, ...bonusCards]
+export default [...provisionCards, ...commandCards, ...tacticCards]
